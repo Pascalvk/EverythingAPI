@@ -1,0 +1,6 @@
+@EverythingAPI_HostAddress = http://localhost:5170
+
+GET {{EverythingAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
