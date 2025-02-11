@@ -1,9 +1,11 @@
 ﻿using EverythingAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using EverythingAPI.DAL;
+using Microsoft.AspNetCore.RateLimiting;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableRateLimiting("fixed")]
 public class UserController : ControllerBase
 {
     private readonly UserDAL UserDAL;

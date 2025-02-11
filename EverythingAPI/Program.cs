@@ -1,6 +1,8 @@
 using System;
+using System.Threading.RateLimiting;
 using EverythingAPI.DAL;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MijnAPI;
@@ -27,6 +29,15 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddRateLimiter(_ => _
+            .AddFixedWindowLimiter(policyName: "fixed", options =>
+            {
+                options.PermitLimit = 4;
+                options.Window = TimeSpan.FromSeconds(12);
+                options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+                options.QueueLimit = 2;
+            }));
+
         var app = builder.Build();
 
         
@@ -39,8 +50,11 @@ public class Program
 
         // Configure the HTTP request pipeline
         app.UseHttpsRedirection();
+        app.UseRateLimiter();
         app.UseAuthorization();
         app.MapControllers();
+
+
 
         app.Run();
     }

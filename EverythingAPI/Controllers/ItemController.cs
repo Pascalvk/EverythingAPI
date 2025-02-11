@@ -1,6 +1,7 @@
 ﻿using EverythingAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using EverythingAPI.DAL;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace EverythingAPI.Controllers
 {
@@ -16,6 +17,7 @@ namespace EverythingAPI.Controllers
         }
 
         [HttpPost]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> CreateNewItem(string itemName, string itemDescription, int statusId, int boardId)
         {         
             try
@@ -35,6 +37,7 @@ namespace EverythingAPI.Controllers
         }
 
         [HttpDelete("{itemId}")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteItem(int itemId)
         {
             try

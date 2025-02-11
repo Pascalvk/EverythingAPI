@@ -1,11 +1,13 @@
 ﻿using EverythingAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using EverythingAPI.DAL;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace EverythingAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableRateLimiting("fixed")]
     public class BoardController : ControllerBase
     {
 
