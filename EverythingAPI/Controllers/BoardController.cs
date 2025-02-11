@@ -7,7 +7,6 @@ namespace EverythingAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [EnableRateLimiting("fixed")]
     public class BoardController : ControllerBase
     {
 

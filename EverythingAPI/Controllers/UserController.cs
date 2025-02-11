@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.RateLimiting;
 
 [ApiController]
 [Route("api/[controller]")]
-[EnableRateLimiting("fixed")]
 public class UserController : ControllerBase
 {
     private readonly UserDAL UserDAL;
