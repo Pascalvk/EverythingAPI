@@ -37,7 +37,6 @@ namespace EverythingAPI.Controllers
         }
 
         [HttpDelete("{itemId}")]
-        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> DeleteItem(int itemId)
         {
             try
