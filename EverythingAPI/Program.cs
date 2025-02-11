@@ -29,17 +29,13 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseSwagger();
-        app.UseSwaggerUI();
-
-
-        /*
+        
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        */
+        
 
         // Configure the HTTP request pipeline
         app.UseHttpsRedirection();
