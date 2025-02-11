@@ -41,23 +41,23 @@ I built this API using Data Access Layers to deepen my understanding of SQL and 
 
 ### User
 #### GET /api/User
-**Beschrijving**: Haal alle gebruikers op.
+**Beschrijving**: Get all users
 
 #### POST /api/User
-**Beschrijving**: Maak een nieuwe gebruiker aan.
+**Beschrijving**: Create a new user.
 - **Param**:
-  - `userName` (string): Naam van de gebruiker
-  - `userEmail` (string): E-mailadres van de gebruiker
+  - `userName` (string): Name of the user
+  - `userEmail` (string): E-mail of the user
 
 #### GET /api/User/{email}
-**Beschrijving**: Haal een gebruiker op op basis van het e-mailadres.
+**Beschrijving**: Get a user with sepcific email.
 - **Param**:
-  - `email` (string): E-mailadres van de gebruiker
+  - `email` (string): Email of user
 
 #### DELETE /api/User/{userId}
-**Beschrijving**: Verwijder een gebruiker op basis van het gebruikers-ID.
+**Beschrijving**: Delete user.
 - **Param**:
-  - `userId` (int): ID van de gebruiker die verwijderd moet worden
+  - `userId` (int): ID of the user about to be deleted
 
 
 
